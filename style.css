@@ -47,6 +47,25 @@ header {
     padding: 0;
     position: relative;
     overflow: hidden;
+    animation: gradientShift 20s ease-in-out infinite; /* Extended time from 10s to 20s and changed timing function */
+}
+
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(135deg, hsl(230, 85%, 40%), hsl(280, 70%, 40%));
+    }
+    25% {
+        background: linear-gradient(135deg, hsl(235, 85%, 40%), hsl(285, 70%, 40%));
+    }
+    50% {
+        background: linear-gradient(135deg, hsl(240, 85%, 40%), hsl(290, 70%, 40%));
+    }
+    75% {
+        background: linear-gradient(135deg, hsl(235, 85%, 40%), hsl(285, 70%, 40%));
+    }
+    100% {
+        background: linear-gradient(135deg, hsl(230, 85%, 40%), hsl(280, 70%, 40%));
+    }
 }
 
 header::before {
@@ -195,13 +214,14 @@ h1 {
     display: block;
     color: var(--text-color);
     font-size: 3.5rem;
-    line-height: 0.7;
-    margin-top: -2.55rem;
+    line-height: 0.8;
+    margin-top: -2.4rem; /* Decreased to bring lines closer together */
+    margin-left: 0.5rem; /* Added left indent for alignment */
 }
 
 .subtitle {
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 300; /* Changed from 400 to 300 for lighter weight */
     max-width: 600px;
     margin-bottom: 1.2rem;
     color: rgba(255, 255, 255, 0.8);
