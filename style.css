@@ -177,7 +177,7 @@ header::before {
 h1 {
     font-size: 4.5rem;
     line-height: 1;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.3rem; /* Increased from 0.8rem to 1.3rem (about 20px more) */
     text-shadow: 0 0 10px rgba(0, 51, 204, 0.5), 0 0 20px rgba(121, 40, 202, 0.3);
     letter-spacing: -0.02em;
 }
@@ -224,13 +224,18 @@ main {
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-size: 1.1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.2),
+        inset 0 1px 3px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+        0 0 8px rgba(0, 255, 255, 0.1);
     position: relative;
     z-index: 1;
     overflow: hidden;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button::before {
@@ -246,12 +251,26 @@ main {
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 7px 30px rgba(0, 0, 0, 0.3),
+        inset 0 1px 3px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+        0 0 15px rgba(0, 255, 255, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button:hover::before {
     left: 100%;
+}
+
+.cta-button:active {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 
+        0 3px 15px rgba(0, 0, 0, 0.2),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.3),
+        0 0 5px rgba(0, 255, 255, 0.1);
 }
 
 .content-preview {
